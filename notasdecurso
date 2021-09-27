@@ -1,0 +1,56 @@
+ PRIMER EJERCICIO
+    <div id="root"></div>
+    <script>
+        //esto no es JSX con propiedades de REACT
+        ReactDOM.render(
+            React.createElement("H1", null ,"Hola Mundo"), 
+            document.getElementById("root")
+        );
+    </script> -->
+ SEGUNDO EJERCICIO BABEL/JSX
+    <div id="root"></div>
+    <script type="text/babel"> 
+        ReactDOM.render(
+            <div>
+                <ul>
+                    <li>Manzana</li>
+                </ul>
+            </div>,document.getElementById("root")
+        );
+    </script>
+    Ejemplo 3 inicio de componentes
+    <div id="root"></div>
+    <script type="text/babel">
+        class Saludo extends React.Component{
+            render(){
+               // return <h1> Hola Mundo - Legacy </h1>;
+               return(
+                    <ul>
+                        <li>Lista 1</li>
+                        <li> Lista 2</li>
+                    </ul>                        
+               );
+            }
+        }
+        ReactDOM.render(<Saludo/> ,document.getElementById("root"));
+    </script>
+    <div id="root"></div>
+    <script type="text/babel">
+        const Saludo =() => {
+            const [numero, setNumero]= React.useState(0); 
+            
+            setInterval(()=>{
+                console.log(numero + 1)
+            },1500);
+
+            //return <h1>Hola Mundo </h1>
+            //const nombre=prompt("Cual es tu nombre"); 
+            return (
+                <div>
+                    <h1>Fecha: {numero}</h1>
+                    <hr/>
+                </div>
+            );
+        }
+        ReactDOM.render(<Saludo/> ,document.getElementById("root"));
+    </script>
